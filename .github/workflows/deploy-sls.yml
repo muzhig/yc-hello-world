@@ -28,5 +28,3 @@ jobs:
           include: |
             *.py
             requirements.txt
-          tags: |
-            ${{ github.sha }}
