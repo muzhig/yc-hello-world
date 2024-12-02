@@ -33,3 +33,4 @@ jobs:
           exclude: |
             .github
             key.json
+            authorized_key.json

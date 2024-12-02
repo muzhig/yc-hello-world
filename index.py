@@ -1,8 +1,12 @@
+import json
 import requests
 
 def handler(event, context):
-    uuid = requests.get('https://httpbin.org/uuid').json()['uuid']
+    resp = json.dumps({
+        'event': event,
+        'context': context,
+    })
     return {
         'statusCode': 200,
-        'body': f'UUID: {uuid}',
+        'body': resp,
     }
