@@ -9,7 +9,6 @@ jobs:
   deploy:
     name: Deploy to Yandex Cloud
     runs-on: ubuntu-latest
-    
     steps:
       - name: Deploy Function
         id: sls-func
@@ -22,11 +21,11 @@ jobs:
           runtime: 'python312'
           memory: '128Mb'
           entrypoint: 'index.handler'
-        environment: |
-          DEBUG=True
-          COUNT=1
-      include: |
-        *.py
-        requirements.txt
-      tags: |
-        ${{ GITHUB_SHA::6 }}
+          environment: |
+            DEBUG=True
+            COUNT=1
+          include: |
+            *.py
+            requirements.txt
+          tags: |
+            ${{ github.sha::6 }}
