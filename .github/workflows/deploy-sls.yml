@@ -28,4 +28,4 @@ jobs:
             *.py
             requirements.txt
           tags: |
-            ${{ github.sha::6 }}
+            ${{ github.sha }}
